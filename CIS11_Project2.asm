@@ -287,6 +287,8 @@
 		AND		R3, R3, #0
 		AND		R4, R4, #0
 		LDR		R0, R6, #0
+		ADD		R4, R0, #-10
+		BRzp		DONE4
 		LD		R4, LC10	
 	C1LOOP1	ADD		R0, R0, #-1
 		BRn		C1NUM
@@ -300,7 +302,7 @@
 		ADD		R0, R0, #3
 		OUT
 		
-		LD		R0, SAVEREG0
+	DONE4	LD		R0, SAVEREG0
 		LD		R3, SAVEREG3
 		LD		R4, SAVEREG4
 		LD		R7, SAVEREG7
