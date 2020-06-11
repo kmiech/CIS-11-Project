@@ -19,10 +19,11 @@
 		
 		JSR		SORT			
 		LD		R5, LC
-
+		LEA		R0, SRTDONE
+		PUTS
 	
 	LOOP2	JSR		POP
-		;JSR		CONVERT3
+		;JSR		CONVERT3		;needs work
 		JSR		CONVERT2
 		JSR		CONVERT1
 		LD		R0, SPACE
@@ -33,6 +34,7 @@
 		HALT
 		;BR		OVER			;stops the program
 		PROMPT	.STRINGZ "Enter a number from 0 - 100 eight times to be sorted:"
+		SRTDONE	.STRINGZ "The numbers sorted in ascending order are:\n"
 		LC		.FILL x08		;Counter
 		SPACE		.FILL x20		;Space
 		NUMARR		.FILL x3600		;Array to hold number inputs address
